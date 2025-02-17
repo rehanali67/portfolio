@@ -107,7 +107,7 @@ const AboutMe = () => {
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200"
+                    className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:border-green-400 transition-shadow duration-200"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 + index * 0.1 }}

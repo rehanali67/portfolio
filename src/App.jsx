@@ -5,6 +5,7 @@ import './App.css'
 import HeroSection from './Components/Hero/HeroSection'
 import ContactSection from './Components/Contact/ContactSection'
 import AboutMe from './Components/About/About'
+import Projects from './Components/Projects/Projects'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
     <HeroSection/>
     
     <AboutMe/>
+    <Projects/>
     <ContactSection/>
     
     </>
