@@ -5,6 +5,7 @@ import { TbBrandTypescript } from "react-icons/tb";
 import { FaAws, FaNode } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiDocker } from "react-icons/si";
 import { PiAngularLogo } from "react-icons/pi";
+import { TbBrandCpp } from "react-icons/tb";
 
 const AboutMe = () => {
   const fadeIn = {
@@ -27,7 +28,7 @@ const AboutMe = () => {
     { name: 'MongoDB', icon: SiMongodb, color: 'text-green-600' },
     { name: 'Express.js', icon: SiExpress, color: 'text-gray-700' },
     { name: 'Angular', icon: PiAngularLogo, color: 'text-red-600' },
-    { name: 'Docker', icon: SiDocker, color: 'text-blue-400' }
+    { name: 'C++', icon: TbBrandCpp, color: 'text-blue-400' }
   ];
 
   return (
@@ -117,6 +118,32 @@ const AboutMe = () => {
                 ))}
               </div>
             </div>
+
+            {/* Education Section */}
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 text-gray-800">Education</h3>
+              <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <h4 className="text-lg font-semibold mb-2 text-gray-800">Bachelor of Computer Science</h4>
+                  <p className="text-gray-600">University of Central Punjab, 2027</p>
+                  <p className="text-gray-600 mt-2">Major in Website Development and Cloud Computing.</p>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <h4 className="text-lg font-semibold mb-2 text-gray-800">Certifications</h4>
+                  <p className="text-gray-600">AWS Certified Developer - Associate (2022)</p>
+                  <p className="text-gray-600">Docker Certified Associate (2021)</p>
+                </motion.div>
+              </div>
+            </div>
+
           </motion.div>
         </motion.div>
       </div>
