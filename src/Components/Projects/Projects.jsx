@@ -12,7 +12,7 @@ const Projects = () => {
     {
       title: 'FaConsultants',
       description: 'A personal portfolio for FA Consultants website built with React and Framer Motion.',
-      image: './faconsultants.png', // Replace with actual project image
+      image: './faconsultants.png',
       link: 'https://faconsultants.netlify.app/',
       tags: ['React', 'Emailjs', 'Tailwind', 'Framer-motion']
     },
@@ -26,7 +26,7 @@ const Projects = () => {
     {
       title: 'Pen & Pixels',
       description: 'A full-stack blogging website using Quilljs and has WYSIWYG functionality.',
-      image: './penandpixels.png', // Replace with actual project image
+      image: './penandpixels.png',
       link: 'https://penandpixel.netlify.app',
       tags: ['Reactjs', 'Framer-motion', 'Quilljs', 'Tailwind', 'Nodejs', 'Express', 'MongoDB', 'JWT']
     },
@@ -70,7 +70,7 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-auto object-contain"
                 />
                 <div className="p-6">
                   <h4 className="text-xl font-semibold text-gray-800 mb-3">{project.title}</h4>
