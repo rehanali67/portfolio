@@ -19,12 +19,9 @@ const HeroSection = () => {
   return (
     <div className="min-h-screen font-Archivo bg-gradient-to-b from-gray-50 to-gray-100 p-6 md:p-8 lg:p-12">
       <div className="max-w-7xl mx-auto rounded-4xl bg-white shadow-sm p-6 md:p-8 min-h-[90vh] relative overflow-hidden">
-        {/* Background subtle pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50" />
 
-        {/* Content container */}
         <div className="relative">
-          {/* Header */}
           <header className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
             <div className="flex gap-3">
               <motion.button
@@ -70,9 +67,7 @@ const HeroSection = () => {
             </nav>
           </header>
 
-          {/* Main Content */}
           <main className="flex flex-col items-center justify-center text-center mt-24 md:mt-32 mb-12">
-            {/* Profile Section */}
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -107,8 +102,16 @@ const HeroSection = () => {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-5xl text-slate-950 lg:text-6xl font-semibold max-w-3xl mx-auto leading-tight tracking-tight"
             >
-              Crafting seamless
-              <span className="block">digital experiences, scalable</span>
+              <motion.span
+                initial={{ backgroundSize: "0% 100%" }}
+                animate={{ backgroundSize: "100% 100%" }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="bg-gradient-to-r from-blue-500 to-teal-500 bg-no-repeat text-white bg-left-bottom inline-block"
+                style={{ backgroundSize: "0% 4px", backgroundPosition: "0 88%", padding: "0 4px" }}
+              >
+                Crafting seamless
+              </motion.span>
+              <span className="block italic">digital experiences, scalable</span>
               <span className="block">applications, and robust solutions.</span>
             </motion.h1>
 
@@ -116,7 +119,6 @@ const HeroSection = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4 }}
-              
               whileTap={{ scale: 0.95 }}
               className="mt-12 px-6 py-3 cursor-pointer bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors flex items-center gap-2 group shadow-md"
             >
