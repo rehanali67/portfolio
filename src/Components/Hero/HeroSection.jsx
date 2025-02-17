@@ -29,9 +29,7 @@ const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={handleCopyEmail}
                 className="px-4 py-2 bg-gray-50 cursor-pointer hover:bg-gray-100 rounded-full flex items-center gap-2 transition-colors group"
-                aria-label={
-                  emailCopied ? "Email copied!" : "Copy email address"
-                }
+                aria-label={emailCopied ? "Email copied!" : "Copy email address"}
               >
                 <Mail className="w-4 h-4 text-gray-600" />
                 <span className="text-sm text-gray-600">
@@ -52,14 +50,20 @@ const HeroSection = () => {
             </div>
 
             <nav className="flex items-center gap-6">
-              {["LinkedIn", "Github", "Instagram"].map((platform, index) => (
-                <React.Fragment key={platform}>
+              {[
+                { name: "LinkedIn", link: "https://linkedin.com/in/rehan-ali-7780752b3" },
+                { name: "Github", link: "https://github.com/rehanali67" },
+                { name: "Instagram", link: "https://www.instagram.com/im._rehanali" }
+              ].map((platform, index) => (
+                <React.Fragment key={platform.name}>
                   <motion.a
-                    href={`#${platform.toLowerCase()}`}
+                    href={platform.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ y: -2 }}
                     className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
                   >
-                    {platform}
+                    {platform.name}
                   </motion.a>
                   {index < 2 && <span className="text-gray-300">/</span>}
                 </React.Fragment>

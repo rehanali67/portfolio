@@ -129,7 +129,7 @@ const ContactSection = () => {
           </motion.a>
 
           <motion.a
-            href="https://wa.me/yournumber"
+            href="https://wa.me/+923175797622"
             onHoverStart={() => setHoveredButton('whatsapp')}
             onHoverEnd={() => setHoveredButton(null)}
             whileTap={{ scale: 0.98 }}
