@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Copy, ArrowUpRight, Mail } from "lucide-react";
+import { Link } from 'react-scroll'; // Import Link from react-scroll
 
 const HeroSection = () => {
   const [emailCopied, setEmailCopied] = useState(false);
@@ -50,7 +51,7 @@ const HeroSection = () => {
             </div>
 
             <nav className="flex items-center gap-6">
-              {[
+              {[ 
                 { name: "LinkedIn", link: "https://linkedin.com/in/rehan-ali-7780752b3" },
                 { name: "Github", link: "https://github.com/rehanali67" },
                 { name: "Instagram", link: "https://www.instagram.com/im._rehanali" }
@@ -110,25 +111,31 @@ const HeroSection = () => {
                 initial={{ backgroundSize: "0% 100%" }}
                 animate={{ backgroundSize: "100% 100%" }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="bg-gradient-to-r from-blue-500 to-teal-500 bg-no-repeat text-white bg-left-bottom inline-block"
+                className="bg-gradient-to-r italic from-blue-500 to-teal-500 bg-no-repeat text-white bg-left-bottom inline-block"
                 style={{ backgroundSize: "0% 4px", backgroundPosition: "0 88%", padding: "0 4px" }}
               >
                 Crafting seamless
               </motion.span>
               <span className="block italic">digital experiences, scalable</span>
-              <span className="block">applications, and robust solutions.</span>
+              <span className="block italic">applications, and robust solutions.</span>
             </motion.h1>
 
-            <motion.button
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-12 px-6 py-3 cursor-pointer bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors flex items-center gap-2 group shadow-md"
+            <Link
+              to="projects" // The name of the id you want to scroll to
+              smooth={true}
+              duration={500} // Duration of the scroll
             >
-              Latest Projects
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </motion.button>
+              <motion.button
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                whileTap={{ scale: 0.95 }}
+                className="mt-12 px-6 py-3 cursor-pointer bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors flex items-center gap-2 group shadow-md"
+              >
+                Latest Projects 
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </motion.button>
+            </Link>
           </main>
         </div>
       </div>

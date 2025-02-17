@@ -6,7 +6,6 @@ import { FaAws, FaNode } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiDocker } from "react-icons/si";
 import { PiAngularLogo } from "react-icons/pi";
 import { TbBrandCpp } from "react-icons/tb";
-
 const AboutMe = () => {
   const fadeIn = {
     initial: { opacity: 0, y: 20 },

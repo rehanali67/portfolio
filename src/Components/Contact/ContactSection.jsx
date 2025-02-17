@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Send, ArrowRight } from 'lucide-react';
+import { MdOutlineHandshake } from "react-icons/md";
 
 const ContactSection = () => {
   const [hoveredButton, setHoveredButton] = useState(null);

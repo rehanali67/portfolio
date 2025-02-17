@@ -40,7 +40,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="py-24 font-Archivo">
+    <section className="py-24 font-Archivo" id='projects'>
       <div className="max-w-8xl mx-auto px-6 lg:px-9">
         <motion.div
           className="space-y-10"
