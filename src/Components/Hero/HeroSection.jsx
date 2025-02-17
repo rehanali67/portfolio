@@ -79,9 +79,9 @@ const HeroSection = () => {
               transition={{ duration: 0.5 }}
               className="relative mb-12"
             >
-              <div className="w-24 h-24 rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 ring-4 ring-white shadow-lg mb-6">
+              <div className="w-24 h-24 mt-6 rounded-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 ring-4 ring-white shadow-lg mb-6">
                 <img
-                  src="pfp.jpg"
+                  src="./pfp.jpg"
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
