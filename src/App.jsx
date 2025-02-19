@@ -1,25 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import HeroSection from './Components/Hero/HeroSection'
-import ContactSection from './Components/Contact/ContactSection'
-import AboutMe from './Components/About/About'
-import Projects from './Components/Projects/Projects'
+import { ThemeProvider } from './Components/Theme/Theme';
+import { GlobalStyles } from './Components/Theme/GlobalTheme';
+import HeroSection from './Components/Hero/HeroSection';
+import AboutMe from './Components/About/About';
+import Projects from './Components/Projects/Projects';
+import ContactSection from './Components/Contact/ContactSection';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <HeroSection/>
-    
-    <AboutMe/>
-    <Projects/>
-    <ContactSection/>
-    
-    </>
-  )
+    <ThemeProvider>
+      <GlobalStyles />
+      <div className="min-h-screen">
+        <HeroSection />
+        <AboutMe />
+        <Projects />
+        <ContactSection />
+      </div>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;

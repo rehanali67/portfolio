@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Send, ArrowRight } from 'lucide-react';
 import { MdOutlineHandshake } from "react-icons/md";
+import { useTheme } from '../Theme/Theme';
 
 const ContactSection = () => {
+  const { isDark } = useTheme();
   const [hoveredButton, setHoveredButton] = useState(null);
   const [iconColorMode, setIconColorMode] = useState('dark');
 
@@ -39,9 +41,9 @@ const ContactSection = () => {
   }, []);
 
   return (
-    <section className="w-full font-Archivo min-h-screen bg-gradient-to-b from-white to-gray-50 flex items-center justify-center py-32 px-6 relative overflow-hidden">
+    <section className={`w-full font-Archivo min-h-screen flex items-center justify-center py-32 px-6 relative overflow-hidden ${isDark ? 'bg-gray-900 text-white' : 'bg-gradient-to-b from-white to-gray-50 text-gray-900'}`}>
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50" />
+      <div className={`absolute inset-0 opacity-50 ${isDark ? 'bg-[radial-gradient(#374151_1px,transparent_1px)]' : 'bg-[radial-gradient(#e5e7eb_1px,transparent_1px)]'} [background-size:16px_16px]`} />
 
       <motion.div
         variants={containerVariants}
@@ -98,7 +100,7 @@ const ContactSection = () => {
             Tell me about your{' '}
             <span className="text-gray-400">next project</span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className={`text-lg max-w-2xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
             Let's collaborate to bring your vision to life with innovative solutions and exceptional design.
           </p>
         </motion.div>
@@ -113,20 +115,10 @@ const ContactSection = () => {
             onHoverStart={() => setHoveredButton('email')}
             onHoverEnd={() => setHoveredButton(null)}
             whileTap={{ scale: 0.98 }}
-            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full hover:bg-slate-700 transition-colors duration-300"
+            className={`group relative inline-flex items-center gap-3 px-8 py-4 rounded-full transition-colors duration-300 ${isDark ? 'bg-gray-800 text-white hover:bg-gray-700' : 'bg-slate-900 text-white hover:bg-slate-700'}`}
           >
             <Mail className="w-4 h-4" />
             <span className="font-medium">Email Me</span>
-            <AnimatePresence>
-              {hoveredButton === 'email' && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  className="absolute inset-0 bg-slate-700 rounded-full -z-10"
-                />
-              )}
-            </AnimatePresence>
           </motion.a>
 
           <motion.a
@@ -134,32 +126,11 @@ const ContactSection = () => {
             onHoverStart={() => setHoveredButton('whatsapp')}
             onHoverEnd={() => setHoveredButton(null)}
             whileTap={{ scale: 0.98 }}
-            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white text-slate-800 rounded-full border border-gray-200 hover:border-gray-300 transition-colors duration-300"
+            className={`group relative inline-flex items-center gap-3 px-8 py-4 rounded-full border transition-colors duration-300 ${isDark ? 'bg-gray-800 text-white border-gray-600 hover:bg-gray-700' : 'bg-white text-gray-900 border-gray-200 hover:border-gray-300'}`}
           >
             <span className="font-medium">WhatsApp</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            <AnimatePresence>
-              {hoveredButton === 'whatsapp' && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  className="absolute inset-0 bg-gray-50 rounded-full -z-10"
-                />
-              )}
-            </AnimatePresence>
           </motion.a>
-        </motion.div>
-
-        {/* Bottom text */}
-        <motion.div
-          variants={itemVariants}
-          className="mt-16"
-        >
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full text-sm text-gray-600 shadow-sm">
-            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Available for freelance opportunities
-          </span>
         </motion.div>
       </motion.div>
     </section>

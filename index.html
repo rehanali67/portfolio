@@ -9,6 +9,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Grechen+Fuemen&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rehan Ali</title>
+    <script>
+      // Check if theme exists in localStorage
+      const theme = localStorage.getItem('theme');
+      
+      // Apply dark mode if explicitly set to dark in localStorage
+      // or if no theme is set and system prefers dark mode
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
